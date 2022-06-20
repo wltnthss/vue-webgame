@@ -8,20 +8,29 @@
   </head>
   <body>
     <div id="root">
-      <div>{{text}}</div>
-      <form v-on:submit="onSubmit">
-        <input type="text" v-model="value" ref="answer"/>
-        <button type="submit">입력!</button>
-      </form>
-      <div id="result">{{result}}</div>
+      <!-- 같은 내용을 여러번 집어넣고 싶을 때는?? 컴포넌트, 웹팩 활용-->
+      <word-relay></word-relay>
+      <word-relay></word-relay>
+      <word-relay></word-relay>
     </div>
     <script>
-      const app = new Vue({
-        el: '#root',
-        data: {
+      Vue.component('word-relay', {   //전역 컴포넌트라 칭함, 서버는 모든 컴포넌트를 화면에 내려줌
+        template: `
+          <div>
+            <div>{{text}}</div>
+              <form v-on:submit="onSubmit">
+                <input type="text" v-model="value" ref="answer"/>
+                <button type="submit">입력!</button>
+              </form>
+            <div id="result">{{result}}</div>
+          </div>
+        `,
+        data() {
+          return {
           text: '집앞',
           value: '',
           result: '',
+          };
         },
         methods: {
           onSubmit(e) {
@@ -30,17 +39,22 @@
             console.log(this.value.substr(0, 1));
 
             if (this.text.substr(this.text.length - 1, 1) === this.value.substr(0, 1)) {
-              this.result = '정답';
+              this.result = '딩동댕!';
               this.text = this.value;
               this.value = '';
               this.$refs.answer.focus();
             } else {
-              this.result = '땡';
+              this.result = '땡!';
               this.value = '';
               this.$refs.answer.focus();
             }
           },
         },
+      });
+    </script>
+    <script>
+      const app = new Vue({
+        el : '#root',
       });
     </script>
   </body>
