@@ -9,11 +9,13 @@
   <body>
     <div id="root">
       <!-- 같은 내용을 여러번 집어넣고 싶을 때는?? 컴포넌트, 웹팩 활용-->
-      <word-relay></word-relay>
-      <word-relay></word-relay>
-      <word-relay></word-relay>
+      <word-relay start-word="하이"></word-relay>
+      <word-relay start-word="뷰"></word-relay>
+      <word-relay start-word="제이에스"></word-relay>
     </div>
     <script>
+      // component는 중복을 피하고 재사용을 위해 사용하고,
+      // 달라지는부분은 props를 통해 사용가능하다.
       Vue.component('word-relay', {   //전역 컴포넌트라 칭함, 서버는 모든 컴포넌트를 화면에 내려줌
         template: `
           <div>
@@ -25,9 +27,11 @@
             <div id="result">{{result}}</div>
           </div>
         `,
+        props: ['startWord']
+        ,
         data() {
           return {
-          text: '집앞',
+          text: this.startWord, // 처음 데이터를 props를 통해 받아올 수 있음
           value: '',
           result: '',
           };
