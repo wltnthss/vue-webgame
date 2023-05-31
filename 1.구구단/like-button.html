@@ -13,6 +13,8 @@
     <div id="root">
       <div v-if="liked">좋아요 눌렀음</div>
       <button v-else @click="onClickButton">Like</button>
+      <div v-if="vueIf">if문 여러개도 되나?</div>
+      <button v-else @click="clicked">Success</button>
     </div>
   </body>
   <script>
@@ -20,11 +22,17 @@
       el: '#root',
       data: {
         liked: false,
+        vueIf: false,
       },
       methods: {
         onClickButton() {
           this.liked = true;
+          this.vueIf = false;
         },
+        clicked(){
+          this.vueIf = true;
+          this.liked= false;
+        }
       },
     });
   </script>
