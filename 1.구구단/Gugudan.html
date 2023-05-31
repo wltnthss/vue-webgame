@@ -27,7 +27,7 @@
         },
         methods: {
           onSubmitForm(e) {
-            e.preventDefault();
+            e.preventDefault();   // 페이지 새로고침을 막기위함.
             if (this.first * this.second === parseInt(this.value)) {
               // 화면에 무슨 값이 변하는지를 초점을 두어 데이터변환
               this.result = '정답';
