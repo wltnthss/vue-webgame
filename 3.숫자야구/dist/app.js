@@ -16,7 +16,7 @@
   \*****************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.runtime.esm.js\");\n/* harmony import */ var _NumberBaseball_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NumberBaseball.vue */ \"./NumberBaseball.vue\");\n\r\n\r\n\r\nnew vue__WEBPACK_IMPORTED_MODULE_1__[\"default\"](_NumberBaseball_vue__WEBPACK_IMPORTED_MODULE_0__[\"default\"]).$mount('#root');\n\n//# sourceURL=webpack://number-baseball2/./main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.runtime.esm.js\");\n/* harmony import */ var _NumberBaseball__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NumberBaseball */ \"./NumberBaseball.vue\");\n\r\n\r\n\r\nnew vue__WEBPACK_IMPORTED_MODULE_1__[\"default\"](_NumberBaseball__WEBPACK_IMPORTED_MODULE_0__[\"default\"]).$mount('#root');\n\n//# sourceURL=webpack://number-baseball2/./main.js?");
 
 /***/ }),
 
